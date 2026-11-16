@@ -1,0 +1,33 @@
+<main class="landing">
+  <div class="landing-lockup" aria-hidden="true">
+    <span class="brand-mark"></span>
+    <span>+</span>
+    <span class="framework-mark"></span>
+  </div>
+  <a class="brand" href="https://kernstra.com/web-sdk">Kernstra PDF Web SDK</a>
+  <p class="landing-framework">{{ framework() }} example</p>
+  <h1>Open a PDF to view, annotate and edit it</h1>
+  <p class="landing-lead">
+    The Kernstra PDF Web SDK running in an {{ framework() }} app. Your file stays in the browser:
+    nothing is uploaded.
+  </p>
+  <label
+    class="dropzone"
+    [attr.data-dragging]="dragging()"
+    (dragover)="onDragOver($event)"
+    (dragleave)="dragging.set(false)"
+    (drop)="onDrop($event)"
+  >
+    <input type="file" accept="application/pdf,.pdf" (change)="onChange($event)" />
+    <strong>Drop a PDF here</strong>
+    <span>or <u>choose a file</u></span>
+  </label>
+  @if (error(); as error) {
+    <p class="landing-error" role="alert">{{ error }}</p>
+  }
+  <p class="landing-links">
+    <a href="https://kernstra.com/web-sdk/get-started">Get started</a>
+    <a href="https://kernstra.com/docs/web-sdk">Documentation</a>
+    <a href="https://kernstra.com/">kernstra.com</a>
+  </p>
+</main>

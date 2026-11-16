@@ -1,0 +1,37 @@
+{
+  "name": "pdf-web-sdk-example-angular",
+  "description": "Angular example for the Kernstra PDF Web SDK: view, annotate, edit and fill PDFs in the browser.",
+  "keywords": ["pdf", "pdf-viewer", "pdf-editor", "pdf-sdk", "pdf-annotation", "pdf-forms", "kernstra", "angular", "angular-pdf-viewer", "typescript"],
+  "homepage": "https://kernstra.com/web-sdk",
+  "repository": { "type": "git", "url": "git+https://github.com/kernstra/pdf-web-sdk-example-angular.git" },
+  "bugs": { "url": "https://github.com/kernstra/pdf-web-sdk-example-angular/issues", "email": "support@kernstra.com" },
+  "license": "MIT",
+  "author": "Kernstra (https://kernstra.com)",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "node scripts/ng.mjs serve",
+    "build": "node scripts/ng.mjs build",
+    "watch": "node scripts/ng.mjs build --watch --configuration development"
+  },
+  "private": true,
+  "packageManager": "npm@12.0.1",
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@kernstra/pdf-web-sdk": "^1.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.6",
+    "@angular/cli": "^22.2.6",
+    "@angular/compiler-cli": "^22.2.0",
+    "prettier": "^3.8.1",
+    "typescript": "~6.0.2"
+  }
+}

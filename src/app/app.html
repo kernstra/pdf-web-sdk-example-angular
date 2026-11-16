@@ -1,0 +1,28 @@
+@if (file(); as file) {
+  <header class="app-header">
+    <h1 class="app-title">
+      <a class="brand" href="https://kernstra.com/web-sdk">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Kernstra PDF Web SDK
+      </a>
+      <span>
+        <span class="framework-mark" aria-hidden="true"></span>
+        {{ framework }}
+      </span>
+    </h1>
+    <div class="app-nav">
+      <span class="app-file">{{ file.name }}</span>
+      <button type="button" (click)="this.file.set(undefined)">Open another PDF</button>
+    </div>
+  </header>
+  <!-- @defer puts the viewer, and the SDK with it, in its own chunk: it loads when
+       the first PDF is chosen and stays out of the initial bundle. -->
+  @defer {
+    <app-document-viewer [file]="file" (failed)="fail($event)" />
+  } @placeholder {
+    <div class="viewer"></div>
+  }
+} @else {
+  <!-- The landing page until a PDF is chosen. -->
+  <app-pdf-dropzone [framework]="framework" [error]="error()" (file)="pick($event)" />
+}
